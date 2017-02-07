@@ -209,5 +209,28 @@ function MeilleursAgents (url) {
             console.log(agent);
             console.log('********************************************');
         }
+        Compare();
     })
+    
+}
+
+function Compare () {
+	console.log(realty.price);
+    var price = realty.price.replace(" ","");
+    price = parseInt(price);
+    var area = parseInt(realty.area);
+    var areaPrice = price/area;
+    
+    console.log(area);
+    console.log(price);
+    console.log(areaPrice);
+    
+    console.log(agent.lowPrice);
+    var lowPrice = agent.lowPrice.replace(" ","");
+    console.log(lowPrice);
+    lowPrice =parseInt(lowPrice);
+
+    console.log(lowPrice);
+
+    //if(areaPrice < )
 }
