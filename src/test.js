@@ -20,10 +20,10 @@ app.get('/scrape', function(req, res){
     // The URL we will scrape from - in our example Anchorman 2.
     console.log('****************** Début accès leboncoin **************************');
 
-    //url = 'https://www.leboncoin.fr/ventes_immobilieres/1087339301.htm?ca=12_s'; //Maison sans agence
-    url = 'https://www.leboncoin.fr/ventes_immobilieres/1052080390.htm?ca=12_s'; //Maison avec agence
+    url = 'https://www.leboncoin.fr/ventes_immobilieres/1087339301.htm?ca=12_s'; //Maison sans agence
+    //url = 'https://www.leboncoin.fr/ventes_immobilieres/1052080390.htm?ca=12_s'; //Maison avec agence
     //url = 'https://www.leboncoin.fr/ventes_immobilieres/1058287543.htm?ca=12_s'; //Appartement sans agence
-    //url = 'https://www.leboncoin.fr/ventes_immobilieres/1074477002.htm?ca=12_s'; //Appartement avec agence
+    //url = 'https://www.leboncoin.fr/ventes_immobilieres/1089921217.htm?ca=12_s'; //Appartement avec agence
 
     // The structure of our request call
     // The first parameter is our URL
@@ -215,22 +215,40 @@ function MeilleursAgents (url) {
 }
 
 function Compare () {
-	console.log(realty.price);
-    var price = realty.price.replace(" ","");
+	var price = realty.price.replace(/\s/g,"");
     price = parseInt(price);
     var area = parseInt(realty.area);
     var areaPrice = price/area;
     
-    console.log(area);
-    console.log(price);
-    console.log(areaPrice);
+    console.log("price by m² : " + areaPrice);
     
-    console.log(agent.lowPrice);
-    var lowPrice = agent.lowPrice.replace(" ","");
-    console.log(lowPrice);
+    var lowPrice = agent.lowPrice.replace(/\s/g,"");
     lowPrice =parseInt(lowPrice);
+    var averagePrice = agent.averagePrice.replace(/\s/g,"");
+    averagePrice =parseInt(averagePrice);
+    var highPrice = agent.highPrice.replace(/\s/g,"");
+    highPrice =parseInt(highPrice);
 
     console.log(lowPrice);
+    console.log(averagePrice);
+    console.log(highPrice);
 
-    //if(areaPrice < )
+    if(areaPrice < lowPrice) {
+    	console.log("Very Good Deal");
+    }
+    else if(areaPrice < lowPrice + (averagePrice - lowPrice)*(2/3)) {
+    	console.log("Good Deal");
+    }
+    else if(areaPrice < averagePrice + (highPrice - averagePrice)*(1/3)) {
+    	console.log("Reasonable Deal");
+    }
+    else if(areaPrice < highPrice) {
+    	console.log("Bad Deal");
+    }
+    else if(areaPrice > highPrice) {
+    	console.log("Very Bad Deal");
+    }
+    else {
+    	console.log("Error Calcul");
+    }
 }
