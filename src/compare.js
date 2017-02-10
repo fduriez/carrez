@@ -3,6 +3,7 @@ exports.Compare = function (res, realty, agent, callback) {
     price = parseInt(price);
     var area = parseInt(realty.area);
     var areaPrice = price/area;
+    agent.yourPrice = areaPrice;
     
     console.log("price by m² : " + areaPrice);
     

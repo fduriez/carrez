@@ -83,3 +83,23 @@ body {
 	width: 50px;
 	text-align: center;
 }
+
+#conteneur
+{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin-left: 30px;
+
+}
+
+.deal
+{
+	padding: 10px;
+	margin-left: 30px;
+}
+
+.element1, .element2
+{
+	margin-right: 150px;
+}

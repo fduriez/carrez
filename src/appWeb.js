@@ -13,6 +13,7 @@ var realty = {
     price : 0 };
 
 var agent = {
+    yourPrice : 0,
     lowPrice : 0,
     averagePrice : 0,
     highPrice : 0 ,

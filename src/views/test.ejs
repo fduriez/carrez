@@ -7,7 +7,14 @@
   </head>
   <body>
     <div id="result"><header class="title">Result</header>
-    <div> <%= deal.dealType %> </div> </div>
+      <div class="deal"> <%= deal.dealType %> </div>
+      <div class="deal"> Your Price : <%= deal.yourPrice %> </div> 
+      <div id="conteneur">
+        <div class="element1"> Low Price <br> <%= deal.lowPrice %> </div>
+        <div class="element2"> Average Price <br> <%= deal.averagePrice %> </div>
+        <div class="element3"> High Price <br> <%= deal.highPrice %> </div> 
+      </div>
+    </div>
     <div class="footer"></div>
   </body>
 </html>
