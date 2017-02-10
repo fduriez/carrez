@@ -8,11 +8,11 @@ body {
 
 .info {
 	border-radius: 4px;
-	width: 400px;
+	width: 600px;
 	height: 200px;
 	position: relative;
 	left: 300px;
-	margin-top: 50px;
+	margin-top: 100px;
 	margin-bottom: 30px;
 	background-color: rgba(255,255,255,.6);
 }
@@ -30,7 +30,7 @@ body {
 #compute {
 	background-image: linear-gradient(to right, rgb(0, 120, 120), rgb(0, 102, 102));
 	padding: 10px;
-	width: 355px;
+	width: 555px;
 	color: white;
 	margin-left: 20px;
 	margin-top: 30px;
@@ -45,20 +45,17 @@ body {
 	padding: 3px;
 	margin-left: 20px;
 	margin-top: 10px;
-	width: 350px;
+	width: 550px;
 	background-color: rgba(255,255,255,.9);
 }
 
-.option {
-	margin-bottom: 15px;
-	margin-left: 20px;
-}
-
-#actors {
-	width: 240px;
-	height: 100px;
+#result {
+	width: 600px;
+	height: 200px;
 	position: relative;
-	left: 380px;
+	left: 300px;
+	margin-top: 100px;
+	margin-bottom: 30px;
 	background-color: rgba(255,255,255,.6);
 	border-radius: 3px;
 }

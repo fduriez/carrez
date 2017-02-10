@@ -1,4 +1,4 @@
-exports.Compare = function (realty, agent) {
+exports.Compare = function (res, realty, agent, callback) {
 	var price = realty.price.replace(/\s/g,"");
     price = parseInt(price);
     var area = parseInt(realty.area);
@@ -37,4 +37,5 @@ exports.Compare = function (realty, agent) {
     }
 
     console.log(agent.dealType);
+    callback(res, agent);
 }

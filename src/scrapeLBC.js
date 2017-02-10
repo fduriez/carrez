@@ -1,9 +1,7 @@
-var maFile = require('./scrapeMA.js');
-
 var request = require('request');
 var cheerio = require('cheerio');
 
-exports.leboncoin = function (url, realty, agent) {
+exports.leboncoin = function (res, url, realty, agent, callback) {
     console.log('****************** Début accès leboncoin **************************');
     request(url, function(error, response, html){
 
@@ -88,25 +86,7 @@ exports.leboncoin = function (url, realty, agent) {
             console.log(url);
             console.log('********************************************');
 
-            maFile.MeilleursAgents(url, realty, agent);
+            callback(res, url, realty, agent, callback);
         }
     })
 }
-
-/*var button = document.querySelector('#compute');
-
-button.addEventListener('click', function onClick () {
-    console.log("On y croit");
-    alert("alert");
-    var car = DRIVY.getCar();
-    var begin = document.querySelector('.begin').value;
-    var end = document.querySelector('.end').value;
-    var distance = document.querySelector('.distance').value;
-    var option = document.querySelector('.option').checked;
-
-    var actors = DRIVY.payActors(car, begin, end, distance, option);
-
-    render(actors);
-
-    return;
-});*/

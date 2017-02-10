@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Workshop Server Node</title>
+  </head>
+  <body>
+    <div class="info" action="action_page.js">
+      <header class="title">
+        Enter Your url from leboncoin
+      </header>
+      <form id="car" action="http://localhost:8080/getdata" method="GET">
+        <input class="model" name="url" type="text" placeholder="url"/> </br>
+        <input id="compute" type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>

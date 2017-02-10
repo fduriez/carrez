@@ -1,9 +1,7 @@
-var compareFile = require('./compare.js');
-
 var request = require('request');
 var cheerio = require('cheerio');
 
-exports.MeilleursAgents = function (url, realty, agent) {
+exports.MeilleursAgents = function (res, url, realty, agent, callback) {
     console.log('******************* Début accès Meilleurs Agents *************************');
     console.log('je suis dans ma fonction');
     console.log('url : ');
@@ -91,7 +89,7 @@ exports.MeilleursAgents = function (url, realty, agent) {
             console.log(agent);
             console.log('********************************************');
         }
-        compareFile.Compare(realty, agent);
+        callback(res, realty,agent);
     })
     
 }
